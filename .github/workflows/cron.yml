@@ -5,13 +5,12 @@ on:
     - cron: '*/2 * * * *'  # Runs every 2 minutes
   workflow_dispatch:  # Optional: manual run
 
-
 jobs:
   call-cron-php:
     runs-on: ubuntu-latest
     steps:
       - name: Call test-cron.php via HTTP
         run: |
-          curl -s -o response.txt -w "%{http_code}" "https://testingmycode.infinityfreeapp.com/test-cron.php"
+          curl -v https://testingmycode.infinityfreeapp.com/test-cron.php -o response.txt
           echo "Response from PHP script:"
           cat response.txt
