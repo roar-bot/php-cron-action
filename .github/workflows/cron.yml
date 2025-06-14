@@ -11,7 +11,8 @@ jobs:
     steps:
       - name: Call test-cron.php via HTTP
         run: |
-          curl -v https://thiruvazhipadu.com/test-cron.php -o response.txt --fail --max-time 30
+          curl -A "Mozilla/5.0" -v "https://thiruvazhipadu.com/test-cron.php" -o response.txt --fail --max-time 30
+
           echo "HTTP Status Code: $?"
           echo "Response from PHP script:"
           cat response.txt
