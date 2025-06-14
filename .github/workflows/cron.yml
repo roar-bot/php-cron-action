@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Call test-cron.php via HTTP
         run: |
-          curl -v https://testingmycode.infinityfreeapp.com/test-cron.php -o response.txt --fail --max-time 30
+          curl -v https://thiruvazhipadu.com/notification/notification_daily.php -o response.txt --fail --max-time 30
           echo "HTTP Status Code: $?"
           echo "Response from PHP script:"
           cat response.txt
